@@ -90,14 +90,14 @@ function loadRegistrations() {
                         class="email-record-btn"
                         onclick="openEmailModal('${item.email}', '${item.name}', '${item.training}', ${index})"
                     >
-                        <img src="Images/mail.png" alt="Email">
+                        <img src="../Images/mail.png" alt="Email">
                     </button>
 
                     <button 
                         class="delete-record-btn"
                         onclick="deleteRegistration(${index})"
                     >
-                        <img src="Images/delete.png" alt="Delete">
+                        <img src="../Images/delete.png" alt="Delete">
                     </button>
                 </td>
             </tr>

@@ -86,7 +86,7 @@ function showTestimonials(page) {
 
         grid.innerHTML += `
             <div class="testimonial-card">
-                <img src="Images/Quote.png" class="quote-icon">
+                <img src="../Images/Quote.png" class="quote-icon">
 
                 <div class="stars">★★★★★</div>
 

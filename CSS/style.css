@@ -230,7 +230,7 @@ body {
             rgba(4, 35, 14, 0.68) 38%,
             rgba(4, 35, 14, 0.28) 100%
         ),
-        url("../Images/landingcover.png");
+        url("../../Images/landingcover.png");
 
     background-size: cover;
     background-position: center;
@@ -1127,7 +1127,7 @@ body:has(.testimonial-header) {
     height: 320px;
     background:
         linear-gradient(rgba(7, 45, 18, 0.45), rgba(7, 45, 18, 0.45)),
-        url("../Images/about_image.png");
+        url("../../Images/about_image.png");
 
     background-size: cover;
     background-position: center;
