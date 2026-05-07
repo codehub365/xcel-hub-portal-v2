@@ -1,0 +1,132 @@
+<div class="registration-modal" id="registrationModal">
+    <div class="registration-container">
+
+        <button class="close-modal" type="button" onclick="closeRegistrationModal()">×</button>
+
+        <h2>Training Registration</h2>
+
+        <form class="registration-form" id="registrationForm">
+
+            <h4>1. Training Selection</h4>
+            <p class="form-note">Piliin ang training na gusto ninyo / Choose your training</p>
+
+            <label>Training Interest*</label>
+            <select id="trainingInterest" required>
+                <option value="">-- Select a Training --</option>
+                <option>Computer Literacy 1</option>
+                <option>Computer Literacy 2</option>
+                <option>Excel for Beginners</option>
+                <option>Excel for Daily Users</option>
+                <option>Excel Formulas & AI Tools</option>
+                <option>Google Sheets Mastery</option>
+            </select>
+
+            <h4>2. Personal Information</h4>
+            <p class="form-note">Inyong pangalan at contact / Your name and contact details</p>
+
+            <div class="form-group">
+                <div>
+                    <label>First Name*</label>
+                    <input type="text" id="firstName" placeholder="Juan" required>
+                </div>
+
+                <div>
+                    <label>M.I.</label>
+                    <input type="text" id="middleInitial" placeholder="D.">
+                </div>
+
+                <div>
+                    <label>Last Name*</label>
+                    <input type="text" id="lastName" placeholder="Dela Cruz" required>
+                </div>
+            </div>
+
+            <label>Mobile Number*</label>
+            <input type="text" id="mobileNumber" placeholder="0918-XXX-XXXX" required>
+
+            <label>Email Address*</label>
+            <input type="email" id="emailAddress" placeholder="juandelacruz@gmail.com" required>
+
+            <h4>3. Laptop & Set-up</h4>
+            <p class="form-note">Para malaman kung kailangan ng laptop reservation</p>
+
+            <label>Mayroon ka bang laptop? / Do you have a laptop?*</label>
+            <div class="choice-group" data-name="hasLaptop">
+                <button type="button">Yes</button>
+                <button type="button">No</button>
+            </div>
+
+            <label>Gusto mo bang mag-reserve ng laptop? / Would you like to reserve a laptop?</label>
+            <div class="choice-group" data-name="reserveLaptop">
+                <button type="button">Yes</button>
+                <button type="button">No</button>
+            </div>
+
+            <label>Microsoft Office Version*</label>
+            <select id="officeVersion" required>
+                <option value="">-- Select Version --</option>
+                <option>Microsoft 365</option>
+                <option>2024</option>
+                <option>2021</option>
+                <option>2019</option>
+                <option>2013</option>
+                <option>2007</option>
+                <option>None/Not Installed</option>
+            </select>
+
+            <h4>4. Experience Level</h4>
+            <p class="form-note">Para ma-assess ang inyong background / To assess your current level</p>
+
+            <label>Bago ka ba sa Excel? / First-time Excel user?*</label>
+            <div class="choice-group" data-name="firstTimeExcel">
+                <button type="button">Yes</button>
+                <button type="button">No</button>
+            </div>
+
+            <label>Skill Level*</label>
+            <div class="skill-grid" id="skillLevel">
+                <button type="button">Basic</button>
+                <button type="button">Beginner</button>
+                <button type="button">Intermediate</button>
+                <button type="button">Advanced</button>
+            </div>
+
+            <label>Ano ang gusto mong matutunan? / What do you want to learn?</label>
+            <textarea id="learningGoals" placeholder="e.g. Gusto ko matutunang gumawa ng pivot tables, dashboard"></textarea>
+
+            <label>Paano mo ginagamit ang Excel sa trabaho? / How do you use Excel at work?</label>
+            <textarea id="excelUsage" placeholder="e.g. Para sa inventory, payroll, reports..."></textarea>
+
+            <button type="button" class="submit-registration" onclick="saveRegistration()">
+            Submit Registration
+            </button>
+
+            <p class="form-footer-note">
+                We will contact you once the training schedule is announced. No login is required.
+            </p>
+
+        </form>
+    </div>
+</div>
+
+<div class="success-modal" id="successModal">
+    <div class="success-box">
+
+        <button class="success-close" type="button" onclick="closeSuccessModal()">×</button>
+
+        <div class="success-icon">✓</div>
+
+        <h2>Submission Successful!</h2>
+
+        <p>
+            Thank you! Your registration of interest has been submitted.
+            <br><br>
+            We will contact you once the training schedule is finalized.
+        </p>
+
+        <button type="button" class="success-home-btn" onclick="backToHome()">
+            Back to Home
+        </button>
+
+    </div>
+</div>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Xcel Hub Portal</title>
+
+    <link rel="stylesheet" href="CSS/style.css">
+
+</head>
+
+<body>
+
+    <div id="header"></div>
+
+    <div id="home"></div>
+
+    <div id="about"></div>
+
+    <div id="trainings"></div>
+
+    <div id="contact"></div>
+
+    <div id="registration"></div>
+
+    <div id="footer"></div>
+
+    <!-- ADMIN LOGIN MODAL - dapat nasa labas ng footer/sections para full screen blur -->
+
+    <div class="admin-modal" id="adminModal">
+
+        <div class="admin-box">
+
+            <button class="admin-close" onclick="closeAdminLogin()">
+                ×
+            </button>
+
+            <h2>Admin Login</h2>
+
+            <p>
+                Authorized personnel only.
+            </p>
+
+            <input 
+                type="password"
+                id="adminPassword"
+                placeholder="Enter admin password"
+            >
+
+            <button onclick="checkAdminPassword()" class="admin-login-btn">
+                Login
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="JS/script.js"></script>
+    <script src="JS/admin.js"></script>
+
+</body>
+
+</html>

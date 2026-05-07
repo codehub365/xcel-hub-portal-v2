@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xcel Hub Admin</title>
+
+    <link rel="stylesheet" href="CSS/admin.css">
+</head>
+
+<body class="admin-page">
+
+    <header class="admin-topbar">
+        <div class="admin-brand">
+            <img src="Images/logo.png" alt="">
+            <div>
+                <h3>Xcel Hub</h3>
+                <span>Admin Dashboard</span>
+            </div>
+        </div>
+
+        <a href="index.html" class="admin-logout">Logout</a>
+    </header>
+
+    <main class="admin-wrapper">
+
+        <section id="dashboard" class="admin-section active">
+            <div class="admin-title">
+                <h1>Dashboard Overview</h1>
+                <p>Monitor training demand, registration records, and learner needs.</p>
+            </div>
+
+            <div class="dashboard-cards">
+                <div class="dashboard-card">
+                    <p>Total Registrations</p>
+                    <h2 id="totalRegistrations">0</h2>
+                </div>
+
+                <div class="dashboard-card">
+                    <p>Popular Training</p>
+                    <h2 id="popularTraining">-</h2>
+                </div>
+
+                <div class="dashboard-card">
+                    <p>Laptop Requests</p>
+                    <h2 id="laptopRequests">0</h2>
+                </div>
+
+                <div class="dashboard-card">
+                    <p>Beginner Users</p>
+                    <h2 id="beginnerUsers">0</h2>
+                </div>
+            </div>
+
+            <div class="dashboard-grid">
+
+                <div class="dashboard-panel">
+                    <h3>Training Demand</h3>
+
+                    <div class="bar-chart">
+                        <div>
+                            <span id="barDailyUsers" style="height:10%" data-tooltip="Excel for Daily Users: 0 responses"></span>
+                            <p>Daily Users</p>
+                        </div>
+
+                        <div>
+                            <span id="barSheets" style="height:10%" data-tooltip="Google Sheets Mastery: 0 responses"></span>
+                            <p>Sheets</p>
+                        </div>
+
+                        <div>
+                            <span id="barLiteracy" style="height:10%" data-tooltip="Computer Literacy: 0 responses"></span>
+                            <p>Literacy</p>
+                        </div>
+
+                        <div>
+                            <span id="barBeginners" style="height:10%" data-tooltip="Excel for Beginners: 0 responses"></span>
+                            <p>Beginners</p>
+                        </div>
+
+                        <div>
+                            <span id="barAITools" style="height:10%" data-tooltip="Excel Formulas & AI Tools: 0 responses"></span>
+                            <p>AI Tools</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-panel">
+                    <h3>Skill Level Distribution</h3>
+
+                    <div class="skill-row">
+                        <label>Basic <span id="basicCount">0 (0%)</span></label>
+                        <div><span id="basicBar" style="width:0%"></span></div>
+                    </div>
+
+                    <div class="skill-row">
+                        <label>Beginner <span id="beginnerCount">0 (0%)</span></label>
+                        <div><span id="beginnerBar" style="width:0%"></span></div>
+                    </div>
+
+                    <div class="skill-row">
+                        <label>Intermediate <span id="intermediateCount">0 (0%)</span></label>
+                        <div><span id="intermediateBar" style="width:0%"></span></div>
+                    </div>
+
+                    <div class="skill-row">
+                        <label>Advanced <span id="advancedCount">0 (0%)</span></label>
+                        <div><span id="advancedBar" style="width:0%"></span></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="registrations" class="admin-section">
+            <div class="admin-title">
+                <h1>Registration Records</h1>
+                <p>View submitted training registration responses.</p>
+            </div>
+
+            <div class="table-card">
+                <input type="text" class="admin-search" id="adminSearch" placeholder="Search registrations...">
+
+                <table>
+                    <thead>
+    <tr>
+        <th>Registrant</th>
+        <th>Email</th>
+        <th>Contact No.</th>
+        <th>Training Interest</th>
+        <th>Laptop</th>
+        <th>Learning Goals</th>
+        <th>Excel Usage</th>
+        <th>Status</th>
+        <th>Action</th>
+    </tr>
+</thead>
+
+                    <tbody id="registrationTableBody"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="trainingsAdmin" class="admin-section">
+            <div class="admin-title">
+                <h1>Training Programs</h1>
+                <p>Summary of available training interests.</p>
+            </div>
+
+            <div class="training-admin-grid" id="trainingAdminGrid"></div>
+        </section>
+
+        <section id="reports" class="admin-section">
+            <div class="admin-title">
+                <h1>Reports</h1>
+                <p>Quick admin summary for planning future training schedules.</p>
+            </div>
+
+            <div class="report-card">
+                <h3>Admin Notes</h3>
+                <p id="adminReportText">
+                    No registration data yet. Once users submit registration forms,
+                    this section will summarize the most requested training and learner needs.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <nav class="admin-bottom-nav">
+        <button onclick="showAdminSection('dashboard')" class="active">Dashboard</button>
+        <button onclick="showAdminSection('registrations')">Registrations</button>
+        <button onclick="showAdminSection('trainingsAdmin')">Trainings</button>
+        <button onclick="showAdminSection('reports')">Reports</button>
+    </nav>
+
+    <script src="JS/admin.js"></script>
+
+    <div class="email-modal" id="emailModal">
+    <div class="email-box">
+        <button class="email-close" onclick="closeEmailModal()">×</button>
+
+        <h2>Email Preview</h2>
+
+        <p class="email-label">Send to:</p>
+        <p id="emailTo" class="email-to"></p>
+
+        <p class="email-label">Message:</p>
+        <pre id="emailMessage" class="email-message"></pre>
+
+        <a id="openEmailBtn" class="open-email-btn">
+            Open Email
+        </a>
+    </div>
+</div>
+
+<div class="delete-modal" id="deleteModal">
+    <div class="delete-box">
+        <h2>Delete Registration?</h2>
+
+        <p>
+            Are you sure you want to delete this registration record?
+            This action cannot be undone.
+        </p>
+
+        <div class="delete-actions">
+            <button class="cancel-delete-btn" onclick="closeDeleteModal()">
+                Cancel
+            </button>
+
+            <button class="confirm-delete-btn" onclick="confirmDeleteRegistration()">
+                Delete
+            </button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
